@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "inicio",
     "destinos",
     "contacto",
+    "usuarios",
 ]
 
 MIDDLEWARE = [
