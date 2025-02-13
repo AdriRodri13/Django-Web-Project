@@ -22,36 +22,21 @@
 <section id="destinos-populares" class="my-5">
     <h2 class="text-center mb-4">Destinos Populares</h2>
     <div class="row g-4">
-        <div class="col-md-4">
-            <div class="destino-card">
-                <div class="destino-img" style="background-image: url(' ');">
-                    <div class="destino-overlay">
-                        <h3>París</h3>
-                        <p>Francia</p>
+        
+        {% for destino in destinos  %}
+        <a href="{% url 'destino_detalle' destino.iden %}">
+            <div class="col-md-4">
+                <div class="destino-card">
+                    <div class="destino-img" style="background-image: url('{{ destino.imagen.url }} ');">
+                        <div class="destino-overlay">
+                            <h3>{{ destino.nombre }}</h3>
+                            <p>{{ destino.pais }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="destino-card">
-                <div class="destino-img" style="background-image: url('/api/placeholder/400/300');">
-                    <div class="destino-overlay">
-                        <h3>Tokio</h3>
-                        <p>Japón</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="destino-card">
-                <div class="destino-img" style="background-image: url('/api/placeholder/400/300');">
-                    <div class="destino-overlay">
-                        <h3>Barcelona</h3>
-                        <p>España</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </a>
+        {% endfor %}
     </div>
 </section>
 

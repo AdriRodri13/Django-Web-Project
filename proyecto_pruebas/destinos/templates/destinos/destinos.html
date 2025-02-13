@@ -10,17 +10,19 @@
     <div class="row g-4">
         
         {% for destino in destinos %}
-        <div class="col-md-6 col-lg-4">
-            <div class="destino-card">
-                <div class="destino-img" style="background-image: url('{{destino.imagen.url}}');">
-                    <div class="destino-overlay">
-                        <h3>{{destino.nombre}}</h3>
-                        <p>{{destino.pais}}</p>
-                        <p class="precio">{{destino.precio}}</p>
+        <a href="{% url 'destino_detalle' destino.iden %}">
+            <div class="col-md-6 col-lg-4">
+                <div class="destino-card">
+                    <div class="destino-img" style="background-image: url('{{ destino.imagen.url }}');">
+                        <div class="destino-overlay">
+                            <h3>{{ destino.nombre }}</h3>
+                            <p>{{ destino.pais }}</p>
+                            <p class="precio">{{ destino.precio }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
         {% endfor %}
 </div>
 {% endblock %}

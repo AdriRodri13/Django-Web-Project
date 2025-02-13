@@ -1,0 +1,6 @@
+<h1>{{ destino.nombre }}</h1>
+<img src="{{ destino.imagen.url }}" alt="{{ destino.nombre }}">
+<p>{{ destino.pais }}</p>
+<p>{{ destino.precio }}</p>
+<p>{{ destino.explicacion }}</p>
+<a href="{% url 'destinos' %}">Volver</a>
