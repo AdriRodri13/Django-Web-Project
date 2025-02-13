@@ -1,5 +1,94 @@
 {% extends "inicio/base.html" %}
 {% load static %}
-{% block title %}Inicio{% endblock title %}
 
-{% block content %}<h1>Hola Mundo<h1>{% endblock content %}
+{% block title %}Inicio - Destinalia{% endblock title %}
+
+{% block cabecera %}
+<link rel="stylesheet" href="{% static 'inicio/css/home.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+{% endblock cabecera %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section text-center" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% static "inicio/img/hero_img.jpg" %}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="hero-content">
+        <h1 class="display-4 mb-4">Descubre el mundo con Destinalia</h1>
+        <p class="lead mb-4">Tu próxima aventura comienza aquí. Explora destinos únicos y crea memorias inolvidables.</p>
+        <a href="#destinos-populares" class="btn btn-primary btn-lg">Explorar Destinos</a>
+    </div>
+</section>
+
+<!-- Destinos Populares -->
+<section id="destinos-populares" class="my-5">
+    <h2 class="text-center mb-4">Destinos Populares</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="destino-card">
+                <div class="destino-img" style="background-image: url(' ');">
+                    <div class="destino-overlay">
+                        <h3>París</h3>
+                        <p>Francia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="destino-card">
+                <div class="destino-img" style="background-image: url('/api/placeholder/400/300');">
+                    <div class="destino-overlay">
+                        <h3>Tokio</h3>
+                        <p>Japón</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="destino-card">
+                <div class="destino-img" style="background-image: url('/api/placeholder/400/300');">
+                    <div class="destino-overlay">
+                        <h3>Barcelona</h3>
+                        <p>España</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Servicios -->
+<section class="servicios my-5">
+    <h2 class="text-center mb-4">Nuestros Servicios</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="servicio-card text-center">
+                <i class="fas fa-plane-departure fa-3x mb-3"></i>
+                <h3>Vuelos</h3>
+                <p>Encuentra las mejores ofertas en vuelos a cualquier destino del mundo.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="servicio-card text-center">
+                <i class="fas fa-hotel fa-3x mb-3"></i>
+                <h3>Hoteles</h3>
+                <p>Alojamientos exclusivos seleccionados para tu comodidad.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="servicio-card text-center">
+                <i class="fas fa-map-marked-alt fa-3x mb-3"></i>
+                <h3>Tours</h3>
+                <p>Excursiones y experiencias únicas en cada destino.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section text-center my-5">
+    <div class="cta-content">
+        <h2 class="mb-4">¿Listo para tu próxima aventura?</h2>
+        <p class="lead mb-4">Únete a miles de viajeros que han confiado en nosotros para crear sus experiencias inolvidables.</p>
+        <a href="#" class="btn btn-primary btn-lg">Contactar Ahora</a>
+    </div>
+</section>
+{% endblock content %}

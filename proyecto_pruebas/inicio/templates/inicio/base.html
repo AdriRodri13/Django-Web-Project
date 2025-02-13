@@ -11,6 +11,8 @@
     
     {% load static %}  
     <link rel="stylesheet" href="{% static 'inicio/css/base.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     {% block cabecera %}{% endblock cabecera %}
 </head>
 <body>
@@ -28,7 +30,7 @@
                             <a class="nav-link btn-nav" href="{% url "Inicio" %}"><i class="fa-solid fa-home"></i> Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-nav" href="#"><i class="fa-solid fa-plane"></i> Destinos</a>
+                            <a class="nav-link btn-nav" href="{% url "destinos" %}"><i class="fa-solid fa-plane"></i> Destinos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn-nav" href="#"><i class="fa-solid fa-envelope"></i> Contacto</a>
