@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from .models import Destino
 
 def destinos(request):
-    template_name = 'destinos/destinos.html'  # Asegúrate de que esta ruta es correcta
-    return render(request, template_name)
+    template_name = 'destinos/destinos.html'
+    destinos = Destino.objects.all()
+    return render(request, template_name, {"destinos":destinos})

@@ -8,44 +8,19 @@
     <h2 class="text-center mb-4">Descubre Nuestros Destinos</h2>
     
     <div class="row g-4">
-        <!-- Destino 1 -->
-        <div class="col-md-6 col-lg-4">
-            <div class="destino-card">
-                <div class="destino-img" style="background-image: url('/api/placeholder/400/300');">
-                    <div class="destino-overlay">
-                        <h3>París</h3>
-                        <p>Francia</p>
-                        <p class="precio">Desde 599€</p>
-                    </div>
-                </div>
-            </div>
-        </div>
         
-        <!-- Destino 2 -->
+        {% for destino in destinos %}
         <div class="col-md-6 col-lg-4">
             <div class="destino-card">
-                <div class="destino-img" style="background-image: url('/api/placeholder/400/300');">
+                <div class="destino-img" style="background-image: url('{{destino.imagen.url}}');">
                     <div class="destino-overlay">
-                        <h3>Roma</h3>
-                        <p>Italia</p>
-                        <p class="precio">Desde 499€</p>
+                        <h3>{{destino.nombre}}</h3>
+                        <p>{{destino.pais}}</p>
+                        <p class="precio">{{destino.precio}}</p>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Destino 3 -->
-        <div class="col-md-6 col-lg-4">
-            <div class="destino-card">
-                <div class="destino-img" style="background-image: url('/api/placeholder/400/300');">
-                    <div class="destino-overlay">
-                        <h3>Barcelona</h3>
-                        <p>España</p>
-                        <p class="precio">Desde 299€</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        {% endfor %}
 </div>
 {% endblock %}
