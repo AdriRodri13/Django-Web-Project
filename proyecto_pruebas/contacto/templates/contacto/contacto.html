@@ -1,0 +1,37 @@
+{% extends "inicio/base.html" %}
+{% load static %}
+
+{% block title %}Contacto - Destinalia{% endblock %}
+
+{% block cabecera %}
+<link rel="stylesheet" href="{% static 'contacto/css/contacto.css' %}">
+{% endblock cabecera %}
+
+{% block content %}
+<div class="container">
+    <h2 class="titulo-seccion">Contáctanos</h2>
+
+    {% if success %}
+        <div class="alert alert-success" role="alert">
+            ¡Tu mensaje ha sido enviado con éxito! Nos pondremos en contacto contigo pronto.
+        </div>
+    {% endif %}
+
+    <form method="POST" class="contacto-form">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.nombre.label_tag }}
+            {{ form.nombre }}
+        </div>
+        <div class="mb-3">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+        </div>
+        <div class="mb-3">
+            {{ form.mensaje.label_tag }}
+            {{ form.mensaje }}
+        </div>
+        <button type="submit" class="btn-enviar">Enviar</button>
+    </form>
+</div>
+{% endblock %}

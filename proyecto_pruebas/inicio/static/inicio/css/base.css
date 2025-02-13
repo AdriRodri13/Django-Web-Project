@@ -1,14 +1,12 @@
 /* ------------------------- */
 /* Estilos Generales */
 /* ------------------------- */
-/* ------------------------- */
-/* Estilos Generales */
-/* ------------------------- */
+
 :root {
     --primary-color: #6ff3d2;
     --secondary-color: #b2ebf2;
     --text-color: #2d3436;
-    --heading-color: #2d3436;
+    --heading-color: #88d3e7;
     --gradient-start: #e0f7fa;
     --gradient-end: #b2ebf2;
 }

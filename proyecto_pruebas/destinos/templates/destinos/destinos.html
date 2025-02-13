@@ -3,26 +3,32 @@
 
 {% block title %}Destinos - Destinalia{% endblock %}
 
+{% block cabecera %}
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'inicio/css/destinos.css' %}">
+{% endblock cabecera %}
+
 {% block content %}
 <div class="container">
-    <h2 class="text-center mb-4">Descubre Nuestros Destinos</h2>
+    <h2 class="titulo-seccion">Descubre Nuestros Destinos</h2>
     
     <div class="row g-4">
-        
         {% for destino in destinos %}
-        <a href="{% url 'destino_detalle' destino.iden %}">
-            <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4">
+            <a href="{% url 'destino_detalle' destino.iden %}" class="destino-link">
                 <div class="destino-card">
                     <div class="destino-img" style="background-image: url('{{ destino.imagen.url }}');">
                         <div class="destino-overlay">
                             <h3>{{ destino.nombre }}</h3>
                             <p>{{ destino.pais }}</p>
-                            <p class="precio">{{ destino.precio }}</p>
+                            <p class="precio">${{ destino.precio }}</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </a>
+            </a>
+        </div>
         {% endfor %}
+    </div>
 </div>
 {% endblock %}

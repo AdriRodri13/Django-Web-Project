@@ -1,6 +1,26 @@
-<h1>{{ destino.nombre }}</h1>
-<img src="{{ destino.imagen.url }}" alt="{{ destino.nombre }}">
-<p>{{ destino.pais }}</p>
-<p>{{ destino.precio }}</p>
-<p>{{ destino.explicacion }}</p>
-<a href="{% url 'destinos' %}">Volver</a>
+{% extends "inicio/base.html" %}
+{% load static %}
+
+{% block title %}{{ destino.nombre }} - Destinalia{% endblock %}
+
+{% block cabecera %}
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'inicio/css/detalle.css' %}">
+{% endblock cabecera %}
+
+{% block content %}
+<div class="container">
+    <div class="detalle-card">
+        <div class="detalle-img" style="background-image: url('{{ destino.imagen.url }}');"></div>
+
+        <div class="detalle-info">
+            <h1 class="detalle-titulo">{{ destino.nombre }}</h1>
+            <p class="detalle-pais"><i class="fa-solid fa-location-dot"></i> {{ destino.pais }}</p>
+            <p class="detalle-precio"><strong>Precio:</strong> ${{ destino.precio }}</p>
+            <p class="detalle-explicacion">{{ destino.explicacion }}</p>
+            <a href="{% url 'destinos' %}" class="btn-volver"><i class="fa-solid fa-arrow-left"></i> Volver a Destinos</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
