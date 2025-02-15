@@ -42,6 +42,11 @@
                             <li class="nav-item">
                                 <a class="nav-link btn-nav" href="{% url 'logout' %}"><i class="fa-solid fa-sign-out-alt"></i> Cerrar sesión</a>
                             </li>
+                            {% if user.is_staff %}
+                                <li class="nav-item">
+                                    <a class="nav-link btn-nav" href="{% url 'admin:index' %}"><i class="fa-solid fa-sign-out-alt"></i> Panel de administrador</a>
+                                </li>
+                            {% endif%}
                         {% else %}
                             <li class="nav-item">
                                 <a class="nav-link btn-nav" href="{% url 'login' %}"><i class="fa-solid fa-sign-in-alt"></i> Iniciar sesión</a>
