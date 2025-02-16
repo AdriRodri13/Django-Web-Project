@@ -4,6 +4,7 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
+from .forms import CustomUserCreationForm
 
 # Create your views here.
 # Vista de perfil (requiere autenticación)
@@ -28,7 +29,7 @@ def login_vista(request):
 # Vista para registrarse
 def signup(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request,'Tu cuenta ha sido creada exitosamente')
@@ -36,7 +37,7 @@ def signup(request):
         else:
             messages.error(request,'Por favor corrige los errores del formulario')
     else:
-        form = UserCreationForm()
+        form = CustomUserCreationForm()
     return render(request, 'usuarios/signup.html', {'form':form})
 
 # Vista para cerrar sesión
